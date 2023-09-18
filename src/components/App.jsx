@@ -12,15 +12,15 @@ export const App = () => {
   const handleClick = event => {
     switch (event) {
       case 'good':
-        setGood(good + 1);
+        setGood(prevState => prevState + 1);
 
         break;
       case 'neutral':
-        setNeutral(neutral + 1);
+        setNeutral(prevState => prevState + 1);
 
         break;
       case 'bad':
-        setBad(bad + 1);
+        setBad(prevState => prevState + 1);
 
         break;
 
@@ -28,25 +28,6 @@ export const App = () => {
         return;
     }
   };
-
-  // onLeaveFeedback = ({ target: {name} }) => {
-  //   this.setState(prevState => ({
-  //     [name]: prevState[name] + 1,
-  //   }));
-  // }
-
-  // countTotalFeedback = () => {
-  //   return Object.values(this.state).reduce((total, cur) => total += cur)
-  // }
-
-  // countPositiveFeedbackPercentage = (total) => {
-  //   const {good} = this.state
-
-  //   if(total > 0)
-  //     return Math.round((good / total) * 100);
-  //     return 0
-
-  // }
 
   const total = good + neutral + bad;
 
